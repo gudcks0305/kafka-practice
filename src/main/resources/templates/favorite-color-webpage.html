@@ -9,7 +9,7 @@
             if($("#user_name").val().length === 0){
                 alert("이름을 입력하세요");
             }else{
-                var url = 'http://localhost:8080/api/select?color='+color_name+'&user='+ $("#user_name").val();
+                var url = 'http://localhost:8080/api/select-color?color='+color_name+'&user='+ $("#user_name").val();
                 $.get(url)
             }
         }
