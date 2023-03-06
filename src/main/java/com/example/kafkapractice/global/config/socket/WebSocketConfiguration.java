@@ -11,7 +11,8 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/chat").setAllowedOrigins("*").withSockJS();
+        // addAllowedOrigin("*")을 추가해야 CORS 에러가 발생하지 않습니다.
+        registry.addEndpoint("/chat").setAllowedOriginPatterns("*").withSockJS();
     }
 
     @Override
