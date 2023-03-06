@@ -18,40 +18,40 @@ services:
     depends_on:
       - zookeeper
 
-  elastic-search:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
-    container_name: elastic-search
-    ports:
-      - "9200:9200"
-      - "9300:9300"
-    environment:
-        - discovery.type=single-node
-        - cluster.name=elasticsearch
-        - bootstrap.memory_lock=true
-        - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-    ulimits:
-        memlock:
-            soft: -1
-            hard: -1
-    volumes:
-        - esdata1:/usr/share/elasticsearch/data
-    networks:
-        - elastic
-  kib01:
-    image: docker.elastic.co/kibana/kibana:7.10.2
-    container_name: kib01
-    ports:
-      - 5601:5601
-    environment:
-      ELASTICSEARCH_URL: http://elastic-search:9200
-      ELASTICSEARCH_HOSTS: http://elastic-search:9200
-    networks:
-      - elastic
+#  elastic-search:
+#    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+#    container_name: elastic-search
+#    ports:
+#      - "9200:9200"
+#      - "9300:9300"
+#    environment:
+#        - discovery.type=single-node
+#        - cluster.name=elasticsearch
+#        - bootstrap.memory_lock=true
+#        - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+#    ulimits:
+#        memlock:
+#            soft: -1
+#            hard: -1
+#    volumes:
+#        - esdata1:/usr/share/elasticsearch/data
+#    networks:
+#        - elastic
+#  kib01:
+#    image: docker.elastic.co/kibana/kibana:7.10.2
+#    container_name: kib01
+#    ports:
+#      - 5601:5601
+#    environment:
+#      ELASTICSEARCH_URL: http://elastic-search:9200
+#      ELASTICSEARCH_HOSTS: http://elastic-search:9200
+#    networks:
+#      - elastic
 
-networks:
-  elastic:
-    driver: bridge
-
-volumes:
-    esdata1:
-        driver: local
+#networks:
+#  elastic:
+#    driver: bridge
+#
+#volumes:
+#    esdata1:
+#        driver: local
