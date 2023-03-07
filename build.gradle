@@ -35,6 +35,18 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.batch:spring-batch-test'
     testImplementation 'org.springframework.kafka:spring-kafka-test'
+    // gson
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    // kafka client
+    implementation 'org.apache.kafka:connect-api:2.5.0'
+    // websocket
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    // stomp socketjs for client ws connection
+    implementation 'org.webjars:sockjs-client:1.1.2'
+    implementation 'org.webjars:stomp-websocket:2.3.3'
+    // axios for client ws connection
+    implementation 'org.webjars.npm:axios:0.21.4'
 }
 
 tasks.named('test') {
