@@ -1,4 +1,6 @@
 spring:
+  server:
+    port: 8080
   kafka:
     bootstrap-servers: localhost:9092
     producer:
@@ -6,5 +8,18 @@ spring:
       group-id: favorite-color
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: favorite-color
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest
+      enable-auto-commit: false
 
-
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store: classpath:keystore.p12
+    key-store-password: dkdlfltm
+    key-store-type: PKCS12
+    key-alias: mydomain
