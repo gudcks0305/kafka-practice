@@ -1,4 +1,4 @@
-package com.example.email;
+package com.example.kafkapractice.email;
 
 import com.example.kafkapractice.email_worker.domain.SendEmail;
 import org.springframework.mail.javamail.JavaMailSender;

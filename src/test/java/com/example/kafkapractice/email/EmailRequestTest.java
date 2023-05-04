@@ -1,11 +1,8 @@
-package com.example.email;
+package com.example.kafkapractice.email;
 
 import com.example.kafkapractice.email_worker.domain.SendEmail;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.mail.javamail.JavaMailSender;
 
 import java.util.List;
 
